@@ -1,0 +1,29 @@
+<div style="text-align: center">
+  <h1>Login Page</h1>
+
+  <% if (typeof errorMessages !== 'undefined' && errorMessages.length > 0) { %>
+  <ul style="list-style: none; padding: 10px">
+    <% errorMessages.forEach(message => { %>
+    <li style="color: red"><%= message %></li>
+    <% }); %>
+  </ul>
+  <% } %>
+
+  <form method="post" action="login">
+    Enter Email:<br />
+    <input type="email" name="email" />
+    <br />
+    Enter Password:<br />
+    <input type="password" name="password" />
+    <br /><br />
+    <input type="submit" value="login" />
+  </form>
+  <br />
+  <a href="/api/users/auth/google">SIGN IN WITH GOOGLE</a>
+  <br />
+  <a href="/api/users/auth/facebook">SIGN IN WITH FACEBOOK</a>
+  <br />
+  <a href="/api/users/auth/github">SIGN IN WITH GITHUB</a>
+  <br />
+  <a href="/api/users/register">Register</a>
+</div>

@@ -1,0 +1,32 @@
+<div style="text-align: center">
+  <h1>Register Page</h1>
+
+  <% if (typeof errorMessages !== 'undefined' && errorMessages.length > 0) { %>
+  <ul style="list-style: none; padding: 10px">
+    <% errorMessages.forEach(message => { %>
+    <li style="color: red"><%= message %></li>
+    <% }); %>
+  </ul>
+  <% } %>
+
+  <form method="post" action="register">
+    Enter User Name:<br />
+    <input
+      type="text"
+      name="username"
+      value="<%= locals.username ? username:''%>"
+    />
+    <br />
+    Enter Email:<br />
+    <input type="text" name="email" value="<%= locals.email ? email:''%>" />
+    <br />
+    Enter Password:<br />
+    <input type="password" name="password" />
+    <br />
+    Comfirm Password:<br />
+    <input type="password" name="Cpassword" />
+    <br /><br />
+    <input type="submit" value="Register" />
+  </form>
+  <a href="/api/users/login">login</a>
+</div>
